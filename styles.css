@@ -68,6 +68,59 @@ h3 {
     font-weight: 700;
 }
 
+/* Mobile Typography Fixes */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .section-header h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    .section-header p {
+        font-size: 0.9rem !important;
+    }
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
@@ -725,6 +778,39 @@ h3 {
     margin-bottom: 6rem;
 }
 
+/* Features Grid Mobile Fixes */
+@media (max-width: 768px) {
+    .features-modern {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-modern {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .feature-card {
+        padding: 2rem;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .feature-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .feature-content h4 {
+        font-size: 1.2rem;
+    }
+}
+
 .feature-card {
     background: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
@@ -1024,12 +1110,19 @@ h3 {
         background-attachment: scroll;
     }
     
+    .kathy-message-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
     .kathy-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .kathy-message {
         font-size: 1rem;
+        line-height: 1.8;
     }
     
     .kathy-image {
@@ -1374,6 +1467,68 @@ h3 {
     align-items: stretch;
 }
 
+/* Events Grid Mobile Fixes */
+@media (max-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .event-card {
+        min-height: 300px;
+        padding: 1.5rem;
+    }
+    
+    .event-date,
+    .event-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+    
+    .event-date .day {
+        font-size: 1.5rem;
+    }
+    
+    .event-date .month {
+        font-size: 0.8rem;
+    }
+    
+    .event-icon i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-grid {
+        gap: 1rem;
+    }
+    
+    .event-card {
+        min-height: 280px;
+        padding: 1.2rem;
+    }
+    
+    .event-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .event-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .event-content p {
+        font-size: 0.9rem;
+    }
+}
+
 .event-card {
     background: var(--bg-card-dark);
     border-radius: var(--border-radius);
@@ -1533,6 +1688,74 @@ h3 {
     gap: 3rem;
 }
 
+/* Presenters Grid Mobile Fixes */
+@media (max-width: 768px) {
+    .presenters {
+        padding: 60px 0;
+    }
+    
+    .presenters-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .presenter-card {
+        padding: 2rem 1.5rem;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    
+    .presenter-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .presenter-title {
+        font-size: 1rem;
+    }
+    
+    .presenter-content > p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .presenters {
+        padding: 50px 0;
+    }
+    
+    .presenters-grid {
+        gap: 1.5rem;
+    }
+    
+    .presenter-card {
+        padding: 1.5rem 1rem;
+        max-width: 100%;
+    }
+    
+    .presenter-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .presenter-title {
+        font-size: 0.9rem;
+    }
+    
+    .presenter-content > p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .presenter-achievements {
+        gap: 0.3rem;
+    }
+    
+    .achievement {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+    }
+}
+
 .presenter-card {
     background: var(--bg-light);
     border-radius: var(--border-radius);
@@ -1632,6 +1855,112 @@ h3 {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
+}
+
+/* Registration Mobile Fixes */
+@media (max-width: 768px) {
+    .registration {
+        padding: 60px 0;
+    }
+    
+    .registration-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .registration-info h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .registration-info > p {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .pricing-info {
+        margin-bottom: 1.5rem;
+    }
+    
+    .registration-features {
+        margin-bottom: 2rem;
+    }
+    
+    .registration-form {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration {
+        padding: 50px 0;
+    }
+    
+    .registration-content {
+        gap: 2rem;
+    }
+    
+    .registration-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .registration-info > p {
+        font-size: 1rem;
+    }
+    
+    .pricing-info {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .price-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .price-item p {
+        font-size: 0.9rem;
+    }
+    
+    .price-note {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .registration-features {
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .registration-features .feature {
+        font-size: 0.9rem;
+    }
+    
+    .registration-form {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .contact-form h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-full {
+        padding: 1rem;
+        font-size: 1rem;
+    }
 }
 
 .registration-info h2 {
@@ -2433,6 +2762,77 @@ h3 {
     margin-right: auto;
 }
 
+/* Board Grid Mobile Fixes */
+@media (max-width: 768px) {
+    .board-members {
+        padding: 60px 0;
+    }
+    
+    .board-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .board-member {
+        padding: 1.5rem;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .member-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .member-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .member-role {
+        font-size: 0.8rem;
+    }
+    
+    .member-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .board-members {
+        padding: 50px 0;
+    }
+    
+    .board-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .board-member {
+        padding: 1rem;
+        max-width: 100%;
+    }
+    
+    .member-photo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .member-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .member-role {
+        font-size: 0.75rem;
+    }
+    
+    .member-description {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+}
+
 .board-member {
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius);
@@ -2775,6 +3175,23 @@ h3 {
     align-items: stretch;
     grid-auto-rows: 1fr;
     min-height: 500px;
+}
+
+/* Location Grid Mobile Fixes */
+@media (max-width: 768px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-grid {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
 }
 
 .location-card {
@@ -3642,8 +4059,8 @@ h3 {
 }
 @media (max-width: 480px) {
     .joseph-img-only {
-        width: 64px;
-        height: 64px;
+        width: 150px;
+        height: 150px;
     }
 }
 
@@ -3671,8 +4088,8 @@ h3 {
 }
 @media (max-width: 480px) {
     .presenter-photo-real {
-        width: 64px;
-        height: 64px;
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -3767,12 +4184,12 @@ h3 {
 
 @media (max-width: 480px) {
     .joseph-img-wrapper {
-        padding: 3px;
+        padding: 4px;
     }
     
     .joseph-img-only {
-        width: 64px;
-        height: 64px;
+        width: 150px;
+        height: 150px;
     }
 }
 
@@ -3836,9 +4253,11 @@ h3 {
     box-shadow: 0 0 32px 8px #d4962f33, 0 8px 24px 0 #3b577c22;
 }
 
+/* Presenter Image Responsive Fixes */
 @media (max-width: 768px) {
     .presenter-img-wrapper {
         padding: 3px;
+        margin: 0 auto 1.5rem auto;
     }
     
     .presenter-img-wrapper::after {
@@ -3846,23 +4265,36 @@ h3 {
     }
     
     .presenter-photo-real {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
+        margin: 0 auto;
+    }
+    
+    .presenter-image {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .presenter-img-wrapper {
-        padding: 2px;
+        padding: 3px;
+        margin: 0 auto 1rem auto;
     }
     
     .presenter-img-wrapper::after {
-        filter: blur(8px);
+        filter: blur(10px);
     }
     
     .presenter-photo-real {
-        width: 64px;
-        height: 64px;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+    
+    .presenter-image {
+        margin-bottom: 1rem;
     }
 }
 
@@ -3908,6 +4340,21 @@ h3 {
     gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Gallery Grid Mobile Fixes */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
 }
 
 .gallery-item {
@@ -4822,14 +5269,55 @@ h3 {
     max-width: 100%;
   }
 }
+
+/* Media query específica para tablets */
+@media (max-width: 768px) {
+  .presenters-central-row {
+    gap: 20px;
+  }
+  
+  .presenter-showcase-card {
+    max-width: 220px;
+    width: 220px;
+    padding: 18px 12px;
+  }
+  
+  .presenter-showcase-image {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 12px;
+  }
+  
+  .presenter-showcase-info h3 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+  
+  .presenter-showcase-title {
+    font-size: 0.82rem;
+  }
+}
 @media (max-width: 900px) {
   .presenters-central-row-1 {
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
   }
   .presenters-central-row-2 {
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
+  }
+  
+  .presenter-showcase-card {
+    max-width: 250px;
+    width: 250px;
+    margin: 0 auto;
+  }
+  
+  .presenter-showcase-image {
+    width: 130px;
+    height: 130px;
   }
 }
 @media (max-width: 700px) {
@@ -4840,10 +5328,221 @@ h3 {
   }
   .presenters-central-row-1 > .presenter-showcase-card,
   .presenters-central-row-2 > .presenter-showcase-card {
-    max-width: 100%;
-    width: 100%;
+    max-width: 280px;
+    width: 280px;
+    margin: 0 auto;
   }
   .presenters-central-grid {
     gap: 18px;
   }
+  
+  .presenter-showcase-card {
+    padding: 20px 15px;
+    border-radius: 15px;
+  }
+  
+  .presenter-showcase-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+  }
+  
+  .presenter-showcase-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .presenter-showcase-title {
+    font-size: 0.85rem;
+  }
+}
+
+/* Additional Mobile Typography and Layout Fixes */
+@media (max-width: 480px) {
+    /* Títulos específicos que podem estar muito grandes */
+    .about-hero-text h3 {
+        font-size: 1.4rem !important;
+    }
+    
+    .gallery-header h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    .presenters-showcase-header h2 {
+        font-size: 1.6rem !important;
+    }
+    
+    .schedule-title h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    .location-title h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .member-info h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .presenter-content h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    .event-content h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .mission-content h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    .hotel-info h4 {
+        font-size: 1.1rem !important;
+    }
+    
+    .presenter-showcase-info h3 {
+        font-size: 1rem !important;
+    }
+    
+    /* Correções específicas para cards de apresentadores no mobile */
+    .presenters-central-row-1 > .presenter-showcase-card,
+    .presenters-central-row-2 > .presenter-showcase-card {
+        max-width: 260px !important;
+        width: 260px !important;
+        margin: 0 auto !important;
+    }
+    
+    .presenter-showcase-card {
+        padding: 15px 10px !important;
+        border-radius: 15px !important;
+    }
+    
+    .presenter-showcase-image {
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0 auto 10px !important;
+    }
+    
+    .presenter-showcase-title {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Ajustes de padding e margin para mobile */
+    .container {
+        padding: 0 15px !important;
+        max-width: 100% !important;
+    }
+    
+    section {
+        padding: 3rem 0 !important;
+    }
+    
+    .hero {
+        padding: 4rem 0 2rem !important;
+    }
+    
+    /* Seções específicas com padding reduzido */
+    .presenters,
+    .board-members,
+    .registration {
+        padding: 3rem 0 !important;
+    }
+    
+    /* Botões menores no mobile */
+    .btn {
+        padding: 12px 20px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Cards com padding menor */
+    .event-card,
+    .feature-card,
+    .presenter-card,
+    .location-card,
+    .board-member {
+        padding: 1.5rem !important;
+        margin: 0 auto !important;
+        max-width: 100% !important;
+    }
+    
+    /* Formulário responsivo */
+    .registration-form {
+        padding: 1.5rem !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    .contact-form {
+        width: 100% !important;
+    }
+    
+    /* Correções específicas para grids problemáticos */
+    .hero-stats {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .mission-stats {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Navegação mobile */
+    .nav-menu {
+        display: none !important;
+    }
+    
+    .hamburger {
+        display: flex !important;
+        flex-direction: column !important;
+        cursor: pointer !important;
+    }
+    
+    .hamburger span {
+        width: 25px !important;
+        height: 3px !important;
+        background: var(--text-dark) !important;
+        margin: 3px 0 !important;
+        transition: var(--transition) !important;
+        display: block !important;
+    }
+    
+    /* Tabelas responsivas */
+    .schedule-table {
+        font-size: 0.8rem !important;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.5rem !important;
+    }
+    
+    /* Lightbox mobile */
+    .lightbox-content img {
+        max-width: 95vw !important;
+        max-height: 70vh !important;
+    }
+    
+    /* Footer mobile */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* ...código existente... */
+    .presenter-showcase-card {
+        min-height: 210px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
 }
