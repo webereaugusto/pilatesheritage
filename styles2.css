@@ -1,0 +1,161 @@
+/* ===== MODERN CSS RESET & VARIABLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Modern Color Palette */
+    --primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --success: linear-gradient(135deg, #81FBB8 0%, #28C76F 100%);
+    --warning: linear-gradient(135deg, #FFD93D 0%, #FF8C42 100%);
+    
+    /* Neutral Colors */
+    --bg-light: #f8fafc;
+    --bg-dark: #0f172a;
+    --surface-light: rgba(255, 255, 255, 0.9);
+    --surface-dark: rgba(15, 23, 42, 0.9);
+    --text-light: #1e293b;
+    --text-dark: #f1f5f9;
+    --text-muted: #64748b;
+    
+    /* Glass Effect */
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --glass-backdrop: blur(8px);
+    
+    /* Dark Mode Glass */
+    --glass-bg-dark: rgba(15, 23, 42, 0.25);
+    --glass-border-dark: rgba(255, 255, 255, 0.1);
+    
+    /* Spacing & Layout */
+    --container-max: 1200px;
+    --section-padding: 120px 0;
+    --border-radius: 20px;
+    --border-radius-sm: 12px;
+    
+    /* Typography */
+    --font-primary: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Poppins', 'Inter', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+    
+    /* Animations */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+    --bg-primary: var(--bg-dark);
+    --surface-primary: var(--surface-dark);
+    --text-primary: var(--text-dark);
+    --glass-bg: var(--glass-bg-dark);
+    --glass-border: var(--glass-border-dark);
+}
+
+/* ===== BASE STYLES ===== */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--bg-light);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background var(--transition-base), color var(--transition-base);
+}
+
+.dark-mode body {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* ===== UTILITY CLASSES ===== */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--glass-shadow);
+    transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2xl);
+}
+
+.magnetic {
+    transition: transform var(--transition-fast);
+}
+
+.magnetic:hover {
+    transform: scale(1.05);
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--accent);
+    z-index: 9999;
+    transition: width var(--transition-fast);
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform var(--transition-fast);
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.1s ease-out;
+} 
