@@ -1,71 +1,9 @@
 // JavaScript principal - Landing Page do International Pilates Heritage Congress
 
-// ==================== PARALLAX EFFECT ====================
-function initializeParallax() {
-    const parallaxSection = document.getElementById('kathy-parallax');
-    const parallaxContent = document.querySelectorAll('.parallax-content');
-    const parallaxImage = document.querySelector('.parallax-image');
-    
-    console.log('🌟 Inicializando efeito parallax...');
-    
-    if (!parallaxSection) {
-        console.warn('⚠️ Seção parallax não encontrada');
-        return;
-    }
-    
-    let ticking = false;
-    
-    function updateParallax() {
-        const scrolled = window.pageYOffset;
-        const sectionTop = parallaxSection.offsetTop;
-        const sectionHeight = parallaxSection.offsetHeight;
-        const windowHeight = window.innerHeight;
-        
-        // Verificar se a seção está visível
-        if (scrolled + windowHeight > sectionTop && scrolled < sectionTop + sectionHeight) {
-            const sectionProgress = (scrolled - sectionTop + windowHeight) / (sectionHeight + windowHeight);
-            
-            // Efeito parallax no background
-            const yPos = -(scrolled - sectionTop) * 0.5;
-            parallaxSection.style.backgroundPosition = `center ${yPos}px`;
-            
-            // Efeito parallax no conteúdo
-            parallaxContent.forEach((element, index) => {
-                const multiplier = 0.15 + (index * 0.05);
-                const yPosElement = -(scrolled - sectionTop) * multiplier;
-                element.style.transform = `translateY(${yPosElement}px) translateZ(0)`;
-            });
-            
-            // Efeito parallax na imagem
-            if (parallaxImage) {
-                const yPosImage = -(scrolled - sectionTop) * 0.25;
-                parallaxImage.style.transform = `translateY(${yPosImage}px) translateZ(0) scale(${1 + sectionProgress * 0.1})`;
-            }
-        }
-        
-        ticking = false;
-    }
-    
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
-    }
-    
-    // Event listeners
-    window.addEventListener('scroll', requestTick, { passive: true });
-    window.addEventListener('resize', updateParallax);
-    
-    // Chamada inicial
-    updateParallax();
-    
-    console.log('✅ Parallax inicializado com sucesso');
-}
-
 // ==================== SLIDESHOW ====================
 function initializeSlideshow() {
     const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
     let currentSlide = 0;
     let slideInterval;
     
@@ -79,11 +17,15 @@ function initializeSlideshow() {
     function showSlide(index) {
         // Remover active de todos
         slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
         
         // Adicionar active ao slide atual
         if (slides[index]) {
             slides[index].classList.add('active');
             console.log('✅ Slide ativo:', index);
+        }
+        if (dots[index]) {
+            dots[index].classList.add('active');
         }
         
         currentSlide = index;
@@ -96,8 +38,8 @@ function initializeSlideshow() {
     
     function startAutoSlide() {
         if (slideInterval) clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 4000); // Aumentado para 4s
-        console.log('🔄 Slideshow automático iniciado (4s)');
+        slideInterval = setInterval(nextSlide, 3000);
+        console.log('🔄 Slideshow automático iniciado (3s)');
     }
     
     function stopAutoSlide() {
@@ -106,6 +48,15 @@ function initializeSlideshow() {
             slideInterval = null;
         }
     }
+    
+    // Navegação manual com dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopAutoSlide();
+            showSlide(index);
+            setTimeout(startAutoSlide, 3000);
+        });
+    });
     
     // Pausar no hover
     const heroSection = document.querySelector('.hero');
@@ -942,29 +893,12 @@ function initializeGallery() {
     console.log('✅ Galeria inicializada com sucesso!');
 }
 
-// ==================== INICIALIZAÇÃO PRINCIPAL ====================
+// Adicionar inicialização da galeria ao DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Inicializando site...');
+    // ... código existente ...
     
-    // Inicializar slideshow
-    initializeSlideshow();
-    
-    // Inicializar parallax
-    initializeParallax();
-    
-    // Inicializar contadores
-    initializeCounters();
-    
-    // Inicializar navegação suave
-    initializeSmoothScroll();
-    
-    // Inicializar navbar
-    initializeNavbar();
-    
-    // Inicializar galeria (com delay para melhor performance)
+    // Inicializar galeria
     setTimeout(() => {
         initializeGallery();
     }, 500);
-    
-    console.log('✅ Site inicializado com sucesso!');
 }); 
